@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ data.city.capitalize }} {% endblock %}
+
+{% block body %}
+
+<style type="text/css">
+    body {
+        background-image: url("{% static 'clouds.jpg' %}");
+    }
+
+    table {
+        padding: 50px;
+        font-weight: bold;
+    }
+</style>
+
+<br><br>
+<div class="container">
+    <div class="text-center">
+        <h1>Weather Data of {{ data.city.capitalize }}</h1>
+    </div>
+    <br>
+    <hr>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Data</th>
+                <th scope="col">Values</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Country Code</td>
+                <td>{{ data.country_code }}</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Latitude</td>
+                <td>{{ data.latitude }} °</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Longitude</td>
+                <td>{{ data.longitude }} °</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Temperature Minimum</td>
+                <td>{{ data.temperature_min }} °C</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Temperature</td>
+                <td>{{ data.temperature }} °C</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>Temperature Maximum</td>
+                <td>{{ data.temperature_max }} °C</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>How it Feels Like</td>
+                <td>{{ data.temperature_feels_like }} °C</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>Forecast</td>
+                <td>{{ data.main }}</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>Description</td>
+                <td>{{ data.description }}</td>
+            </tr>
+            <tr>
+                <th scope="row">10</th>
+                <td>Pressure</td>
+                <td>{{ data.pressure }} Hg</td>
+            </tr>
+            <tr>
+                <th scope="row">11</th>
+                <td>Humidity</td>
+                <td>{{ data.humidity }} %</td>
+            </tr>
+            <tr>
+                <th scope="row">12</th>
+                <td>Wind Degree</td>
+                <td>{{ data.wind_degree }} °</td>
+            </tr>
+            <tr>
+                <th scope="row">13</th>
+                <td>Wind Speed</td>
+                <td>{{ data.wind_speed }} Kmph</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'css/css.html' %}
+
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>  
+
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/">Weather
+          <img src="{% static '/weather.png' %}" alt="" width="40" height="40" class="d-inline-block align-text-top"></a>
+        </div> 
+        <li class="nav-item">
+          <a class="nav-link" href="http://arvind11.ml" target="_blank">By Arvind</a>
+        </li>     
+    </nav>
+    <div class="container">
+      {% block body %} {% endblock %}
+    </div>
+
+    {% include 'js/js.html' %}
+  </body>
+</html>
