@@ -1,12 +1,11 @@
-asgiref==3.7.2
-certifi==2023.11.17
-chardet==4.0.0
-Django==3.2.5
-idna==2.10
-python-decouple==3.8
-pytz==2023.3.post1
-requests==2.25.1
-sqlparse==0.4.4
-typing_extensions==4.8.0
-urllib3==1.26.18
-whitenoise==5.2.0
+asgiref==3.7.2 ; python_version >= "3.8" and python_version < "4.0"
+certifi==2023.11.17 ; python_version >= "3.8" and python_version < "4.0"
+charset-normalizer==3.3.2 ; python_version >= "3.8" and python_version < "4.0"
+django==3.2.23 ; python_version >= "3.8" and python_version < "4.0"
+idna==3.6 ; python_version >= "3.8" and python_version < "4.0"
+pytz==2023.3.post1 ; python_version >= "3.8" and python_version < "4.0"
+requests==2.31.0 ; python_version >= "3.8" and python_version < "4.0"
+sqlparse==0.4.4 ; python_version >= "3.8" and python_version < "4.0"
+typing-extensions==4.8.0 ; python_version >= "3.8" and python_version < "3.11"
+urllib3==2.1.0 ; python_version >= "3.8" and python_version < "4.0"
+whitenoise==6.6.0 ; python_version >= "3.8" and python_version < "4.0"
