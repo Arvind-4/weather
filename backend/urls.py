@@ -13,12 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-from weather.views import index, information
+from django.urls import include, path
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", index),
-    path("<str:name>/", information),
+    path("", include("weather.urls")),
 ]
+
+handler404 = "weather.pages.views.handler404"
+
+
+from weather.utils import set_cities_data
+
+set_cities_data()
