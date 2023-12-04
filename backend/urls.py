@@ -18,7 +18,7 @@ from django.urls import path
 from weather.views import index, information
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', index),
-    path('<str:name>/', information),
+    path("admin/", admin.site.urls),
+    path("", index),
+    path("<str:name>/", information),
 ]
