@@ -1,19 +1,14 @@
 import requests
-import os
-from dotenv import load_dotenv
-load_dotenv()
+from decouple import config
 
-api_key = os.environ.get('API_KEY')
-print(api_key)
+API_KEY = config('DJANGO_WEATHER_API_KEY', cast=str)
 
 def get_weather_data(city):
-	url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={api_key}'
+	url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={API_KEY}'
 	data = requests.get(url)
-	# pprint(data)
 
 	if data.status_code in range(200, 350):
 		data = data.json()
-
 		context = {
 			'city': city,
 			'country_code': data['sys']['country'],
@@ -32,9 +27,7 @@ def get_weather_data(city):
 			'longitude': data['coord']['lon'],
 			}
 		return context
-
-	else:
-		return None
+	return None
 
 print(get_weather_data('chennai'))
 
