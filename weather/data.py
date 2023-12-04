@@ -7,7 +7,6 @@ API_KEY = config("DJANGO_WEATHER_API_KEY", cast=str)
 def get_weather_data(city):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={API_KEY}"
     data = requests.get(url)
-
     if data.status_code in range(200, 350):
         data = data.json()
         context = {
@@ -29,10 +28,3 @@ def get_weather_data(city):
         }
         return context
     return None
-
-
-print(get_weather_data("chennai"))
-
-# def get_data(city):
-# 	url = f'api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}'
-# 	r = request
