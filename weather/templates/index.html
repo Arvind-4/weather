@@ -1,38 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block title %} Weather {% endblock %}
-
+{% block title %}Weather{% endblock %}
 {% block body %}
-<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
-<br><br><br><br><br>
-
-<div class="container">
+  <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container">
     <div class="text-center">
-        <h2>
-            Check the Weather of Your Place
-        </h2>
-        <hr>
+      <h2>Check the Weather of Your Place</h2>
+      <hr>
     </div>
     <div class="text-center">
-        <form method="POST">
-            {% csrf_token %}
-            <div class="text-center">
-                {{ form }}
-            </div>
-            <br>
-            <div class="text-center">
-
-                <button type="submit" class="btn btn-success">Go...</button>
-                <br><br><br><br>
-
-                <br><br>
-            </div>
-        </form>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="text-center">{{ form }}</div>
+        <br>
+        <div class="text-center">
+          <button type="submit" class="btn btn-success">Go...</button>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+      </form>
     </div>
-
-
-
-</div>
-
+  </div>
 {% endblock %}
